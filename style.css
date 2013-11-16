@@ -1,0 +1,111 @@
+section {
+  clear: both;
+}
+
+section#navigation {
+  float: left;
+  width: 15%;
+  clear: none;
+}
+
+section#orderForm {
+  float: left;
+  width: 40%;
+  clear: none;
+}
+
+section#carSelection {
+  width: 35%;
+  clear: none;
+  float: left;
+}
+
+table#carSelectionTable {
+  margin-left:15%;
+  border-spacing: 0px;
+  height: 500px;
+}
+
+table#carSelectionTable td {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+table#cars tr:nth-of-type(even) {
+  background-color: #99CC00;
+}
+
+table#cars tr:nth-of-type(odd) {
+  background-color: #339900;
+}
+
+table#cars th {
+  background-color: #316690;
+  color: #FFFFFF;
+}
+
+img {
+  vertical-align: middle;
+  width: 100px;
+}
+
+form#orderTaxi fieldset input {
+  display: block;
+  width: 95%;
+}
+
+footer#copyright {
+  clear: both;
+}
+
+h3{
+  text-align: center;
+}
+
+fieldset {
+  border-radius: 10px;
+  background-color: #316690;
+  color: #FFFFFF;
+}
+
+input,select {
+  border-radius: 10px;
+  background-color: rgba(254, 255, 189, 0.95); 
+  margin-bottom:10px;
+}
+
+
+table#carSelectionTable tr:nth-of-type(even) {
+  background-color: #99CC00;
+}
+
+table#carSelectionTable tr:nth-of-type(odd) {
+  background-color: #339900;
+}
+
+table#carSelectionTable th {
+  background-color: #316690;
+  color: #FFFFFF;
+}
+
+table#carPrefTable {
+  background-color: #FFFFFF;
+  padding: 5px;
+}
+
+table#carPrefTable td {
+  width: 100%;
+  text-align: left;
+  vertical-align: bottom;
+  color: #000000;
+}
+
+span#alert{
+  background-color: #FFFF00;
+  color: #000000;
+}
+
+span#submitError{
+  background-color: #FFFF00;
+  color: #000000;
+}
