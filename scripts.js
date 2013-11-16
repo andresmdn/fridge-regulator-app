@@ -1,13 +1,13 @@
-var getGeoLocation = function(locOut, getGeoButton, errorOut) {
+var getGeoLocation = function (locOut, getGeoButton, errorOut) {
 
-  var timeoutError = true;
-  locOut.location = false;
-
-  var checkGeoLocationNoShow = function() { 
+  var checkGeoLocationNoShow = function () {
     if(timeoutError === true) { 
       errorOut.innerHTML = "****No geolocation was detected.****"; 
-    } 
-  } 
+    }
+  }
+  
+  var timeoutError = true;
+  locOut.location = false;
   
   var locationInfo = function(position) {
     var details = "Lat: " + position.coords.latitude + ", Long: " + position.coords.longitude;

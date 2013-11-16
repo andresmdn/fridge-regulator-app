@@ -1,0 +1,158 @@
+<!doctype html>
+<link rel="stylesheet" href="style.css" type="text/css" />
+<html>
+	<section id="navigation">
+		<nav>
+			<h1>Site Navigation</h1>
+			<ul>
+		  		<li><A href="service.html">Taxi Service</A></li>
+		  		<li><A href="contact.html">Contact</A></li>
+		  		<li><A href="about.html">About Us</A></li>
+			</ul>
+		</nav>
+	</section>
+	<section id="orderForm">
+		<article>
+			<h3>Request a Taxi</h3>
+		    <form id='orderTaxi' method="post">
+		      	<fieldset id="orderTax">
+			        <label>First Name:</label>
+			        <input type="input" name="firstName" pattern="([a-zA-Z]+[a-zA-Z- ]*){2,}" required></input>
+					<label>Last Name:</label>
+			        <input type="input" name="lastName" pattern="([a-zA-Z]+[a-zA-Z- ]*){2,}*" required></input>
+					<label>Phone Number:</label>
+			        <input type="tel" name="phoneNum" placeholder="(123)456-7890" pattern='[\(]\d{3}[\)]\d{3}[\-]\d{4}|\d{3}[\-]\d{3}[\-]\d{4}|' required></input>
+			        <label>Email:</label>
+			        <input type="email" placeholder="username@example.com" required></input>
+			        <label>Pick-Up Location:</label>
+			        <button type="button" id="getGeoButton">Click to Populate</button><br />
+			        <span id="geoLoc"></span><br />
+			        <span id="alert"></span><br />
+			        <label>Preferred Car(s):</label>
+					<table id="carPrefTable">
+						<tr>
+							<td id="carPref"><img src="http://s23.postimg.org/zfj0j00kn/drag.jpg" alt="Drag from selections in table at right" draggable="false" /></td>
+						</tr>
+					</table>
+					<label>Destination Address:</label>
+					<input type="input" name="address" placeholder="123 Main St." pattern="[0-9 ]+[a-zA-Z]+[a-zA-Z0-9_., ]*" required></input>
+					<input type="input" name="city" placeholder="City" pattern="([a-zA-Z]+[a-zA-Z- ]*){2,}" required></input>
+					<select name="state" required>
+						<option value="">State</option>
+						<option value="AL">Alabama</option>
+						<option value="AK">Alaska</option>
+						<option value="AZ">Arizona</option>
+						<option value="AR">Arkansas</option>
+						<option value="CA">California</option>
+						<option value="CO">Colorado</option>
+						<option value="CT">Connecticut</option>
+						<option value="DE">Delaware</option>
+						<option value="DC">District of Columbia</option>
+						<option value="FL">Florida</option>
+						<option value="GA">Georgia</option>
+						<option value="HI">Hawaii</option>
+						<option value="ID">Idaho</option>
+						<option value="IL">Illinois</option>
+						<option value="IN">Indiana</option>
+						<option value="IA">Iowa</option>
+						<option value="KS">Kansas</option>
+						<option value="KY">Kentucky</option>
+						<option value="LA">Louisiana</option>
+						<option value="ME">Maine</option>
+						<option value="MD">Maryland</option>
+						<option value="MA">Massachusetts</option>
+						<option value="MI">Michigan</option>
+						<option value="MN">Minnesota</option>
+						<option value="MS">Mississippi</option>
+						<option value="MO">Missouri</option>
+						<option value="MT">Montana</option>
+						<option value="NE">Nebraska</option>
+						<option value="NV">Nevada</option>
+						<option value="NH">New Hampshire</option>
+						<option value="NJ">New Jersey</option>
+						<option value="NM">New Mexico</option>
+						<option value="NY">New York</option>
+						<option value="NC">North Carolina</option>
+						<option value="ND">North Dakota</option>
+						<option value="OH">Ohio</option>
+						<option value="OK">Oklahoma</option>
+						<option value="OR">Oregon</option>
+						<option value="PA">Pennsylvania</option>
+						<option value="RI">Rhode Island</option>
+						<option value="SC">South Carolina</option>
+						<option value="SD">South Dakota</option>
+						<option value="TN">Tennessee</option>
+						<option value="TX">Texas</option>
+						<option value="UT">Utah</option>
+						<option value="VT">Vermont</option>
+						<option value="VA">Virginia</option>
+						<option value="WA">Washington</option>
+						<option value="WV">West Virginia</option>
+						<option value="WI">Wisconsin</option>
+						<option value="WY">Wyoming</option>
+					</select>
+					<br /><span id="submitError"></span><br />
+		      	</fieldset><br />
+	        	<input type="submit" value="Request Taxi" name="submission"></input>
+			</form>
+		</article>
+	</section>
+	<section id="carSelection">
+		<table id="carSelectionTable">
+		<tr><th colspan=2>Available Cars</th></tr>
+		
+	    <tr id="taxiRow" class='car' draggable="true">
+	    	<td>Taxi</td>
+	    	<td id="taxi"><img id="taxiImg" class="car_image" draggable="true" src="http://s9.postimg.org/6i8yll0yn/taxi.jpg" alt="taxi" /></td>
+	    </tr>
+	    
+	    <tr id="sedanRow" class='car' draggable="true">
+	    	<td>Sedan</td>
+	    	<td id="sedan"><img id="sedanImg" class="car_image" draggable="true" src="http://s13.postimg.org/5xfblupjb/sedan.jpg" alt="sedan" /></td>
+	    </tr>
+	    
+	    <tr id="suv_sedanRow" class='car' draggable="true">
+	    	<td>SUV Sedan</td>
+	    	<td id="suv_sedan"><img id="suv_sedanImg" class="car_image" draggable="true" src="http://s17.postimg.org/xxex9g79b/suv_sedan.jpg" alt="suv_sedan" /></td>
+	    </tr>
+	    
+	    <tr id="suv_limoRow" class='car' draggable="true">
+	    	<td>SUV Limo</td>
+	    	<td id="suv_limo"><img id="suv_limoImg" class="car_image" draggable="true" src="http://s22.postimg.org/70hpekk75/suv_limo.jpg" alt="suv_limo" /></td>
+	    </tr>
+	    
+	    <tr id="limousineRow" draggable="true" class='car'>
+	    	<td>Limousine</td>
+	    	<td id="limousine"><img id="limousineImg" class="car_image" draggable="true" src="http://s21.postimg.org/56vynstnb/limo.jpg" alt="limousine" /></td>
+	    </tr>
+	    
+	    <tr id="vanRow" draggable="true" class='car'>
+	    	<td>Van</td>
+	    	<td id="van"><img id="vanImg" class="car_image" draggable="true" src="http://s21.postimg.org/jdgawrtw7/van.jpg" alt="van" /></td>
+	    </tr>
+	    
+	    <tr id="carg_vanRow" draggable="true" class='car'>
+	    	<td>Cargo Vn</td>
+	    	<td id="cargo_van"><img id="cargo_vanImg" class="car_image" draggable="true" src="http://s18.postimg.org/6fk2orqkp/cargo_van.jpg" alt="cargo_van" /></td>
+	    </tr>
+	    
+	    <tr id="minibusRow" draggable="true" class='car'>
+	    	<td>Minibus</td>
+	    	<td id="minibus"><img id="minibusImg" class="car_image" draggable="true"src="http://s24.postimg.org/o5vmosz0l/minibus.jpg" alt="minibus" /></td>
+	    </tr>
+	    
+	  </table>
+	</section>
+	<footer id="copyright">
+		<br />
+		<hr></hr>
+		<p>&copy; 2013 All rights reserved.</p>	
+	</footer>
+	<head>
+		<script src="scripts.js"></script>
+		<script>
+		  getGeoLocation(document.getElementById('geoLoc'),document.getElementById('getGeoButton'),document.getElementById('alert'));
+		  dragDrop(document.getElementById('orderTaxi'),document.getElementById('carSelectionTable'),document.getElementsByClassName('car'),document.getElementsByClassName('car_image'));
+		</script>
+	</head>
+</html>
